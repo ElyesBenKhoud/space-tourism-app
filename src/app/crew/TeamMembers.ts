@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-
 import anousheh from "@/assets/crew/image-anousheh-ansari.png";
 import douglas from "@/assets/crew/image-douglas-hurley.png";
 import mark from "@/assets/crew/image-mark-shuttleworth.png";
