@@ -12,9 +12,9 @@ import tablet from "@/assets/destination/background-destination-tablet.jpg";
 import desktop from "@/assets/destination/background-destination-desktop.jpg";
 
 function page() {
-  const [actual, setActual] = useState(0);
+  const [actualPlanet, setActualPlanet] = useState(0);
 
-  const planet = useMemo(() => planets[actual], [actual]);
+  const planet = useMemo(() => planets[actualPlanet], [actualPlanet]);
 
   return (
     <div>
@@ -44,7 +44,7 @@ function page() {
               {planets.map(({ name }, index) => (
                 <div
                   key={name}
-                  onClick={() => setActual(index)}
+                  onClick={() => setActualPlanet(index)}
                   className={`relative py-2 border-b-2 border-transparent cursor-pointer transition [&:not(.active)]:hover:border-current [&.active]:text-white  ${
                     !index && "active"
                   }`}
@@ -58,11 +58,11 @@ function page() {
             </div>
             <div className="text-secondary text-center lg:text-left">
               <h3 className="mt-5 uppercase text-white lg:text-[100px]">
-                {planets[actual].name}
+                {planets[actualPlanet].name}
               </h3>
               <p className="leading-relaxed lg:text-[18px]">
                 {" "}
-                {planets[actual].description}{" "}
+                {planets[actualPlanet].description}{" "}
               </p>
               <hr className="my-8 border-secondary/25" />
               <div className="grid md:grid-cols-2 gap-8">
@@ -70,14 +70,14 @@ function page() {
                   <span className="block sub-2">avg. distance</span>
                   <span className="block sub-1 text-white">
                     {" "}
-                    {planets[actual].distance}{" "}
+                    {planets[actualPlanet].distance}{" "}
                   </span>
                 </div>
                 <div className="w-fit mx-auto uppercase lg:mx-0">
                   <span className="block sub-2">est. travel time</span>
                   <span className="block sub-1 text-white">
                     {" "}
-                    {planets[actual].time}{" "}
+                    {planets[actualPlanet].time}{" "}
                   </span>
                 </div>
               </div>
