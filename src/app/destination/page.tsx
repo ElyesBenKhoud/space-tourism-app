@@ -6,7 +6,7 @@ import { useMemo, useState } from "react";
 
 import { planets } from "./planets";
 import Background from "@/components/Background";
-
+import PlanetContent from "@/components/PlanetContent";
 import mobile from "@/assets/destination/background-destination-mobile.jpg";
 import tablet from "@/assets/destination/background-destination-tablet.jpg";
 import desktop from "@/assets/destination/background-destination-desktop.jpg";
@@ -50,7 +50,6 @@ function page() {
                   }`}
                 >
                   {name}
-
                   {planet.name === name && (
                     <span className="absolute bottom-0 left-0 w-full h-1 bg-white" />
                   )}
@@ -58,30 +57,7 @@ function page() {
               ))}
             </div>
             <div className="text-secondary text-center lg:text-left">
-              <h3 className="mt-5 uppercase text-white lg:text-[100px]">
-                {planets[actualPlanet].name}
-              </h3>
-              <p className="leading-relaxed lg:text-[18px]">
-                {" "}
-                {planets[actualPlanet].description}{" "}
-              </p>
-              <hr className="my-8 border-secondary/25" />
-              <div className="grid md:grid-cols-2 gap-8">
-                <div className="w-fit mx-auto uppercase lg:mx-0">
-                  <span className="block sub-2">avg. distance</span>
-                  <span className="block sub-1 text-white">
-                    {" "}
-                    {planets[actualPlanet].distance}{" "}
-                  </span>
-                </div>
-                <div className="w-fit mx-auto uppercase lg:mx-0">
-                  <span className="block sub-2">est. travel time</span>
-                  <span className="block sub-1 text-white">
-                    {" "}
-                    {planets[actualPlanet].time}{" "}
-                  </span>
-                </div>
-              </div>
+              <PlanetContent actualPlanet={planets[actualPlanet]} />
             </div>
           </div>
         </div>
