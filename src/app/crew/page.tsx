@@ -14,7 +14,7 @@ import mobile from "@/assets/crew/background-crew-mobile.jpg";
 import tablet from "@/assets/crew/background-crew-tablet.jpg";
 import desktop from "@/assets/crew/background-crew-desktop.jpg";
 import TeamMemberAvatar from "@/components/TeamMemberAvatar";
-import MemberPagination from "@/components/memberPagination";
+import MemberPagination from "@/components/MemberPagination";
 
 function page() {
   let [actualMember, setActualMember] = useState(0);
